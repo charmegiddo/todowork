@@ -5,6 +5,21 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
+
+    @Clear = 0
+    @Sum = 0
+
+    @tasks.each do |task|
+     
+      if task.status == true
+        @Clear += 1
+      end
+     
+      @Sum += 1
+    end
+
+    @Res = ( @Clear.to_f / @Sum.to_f ) * 100
+
   end
 
   # GET /tasks/1
