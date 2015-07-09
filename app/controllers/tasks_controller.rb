@@ -18,7 +18,11 @@ class TasksController < ApplicationController
       @Sum += 1
     end
 
+    @Res = -1
+    if @Sum != 0
+    @Res = 0 
     @Res = ( @Clear.to_f / @Sum.to_f ) * 100
+    end
 
   end
 
